@@ -5,10 +5,12 @@ people = [
     {"name": "李清照", "poetry": "b横看成岭侧成峰，远近高低各不同"}
 ]
 
-
+'''
 def f(person):
     return person["name"]
+'''
 
-
-people.sort(key=f)
+# takes person as input and returns their name
+# python actually sort by their name
+people.sort(key=lambda person: person["name"])
 print(people)
