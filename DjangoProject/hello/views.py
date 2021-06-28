@@ -23,10 +23,13 @@ def david(request):
     return HttpResponse("hello, David")
 
 
-def greet(requset, name):
-    return HttpResponse(f"hello,{name.capitalize()}")
+# def greet(requset, name):
+#     return HttpResponse(f"hello,{name.capitalize()}")
     # 首字母大写 take the name capitalize it
     # and I have now been add to a route that takes an HTTP request as well as parameter,
     # --that name, whatever was in the URL and return HTTP response that just says hello
     # to that person.So these HTTP responses can be any HTML content, right now text, you can
     # adding lists or tables to this as well.
+
+def greet(request, name):
+    return render(request, "hello/greet.html", {"name": name.capitalize()})
